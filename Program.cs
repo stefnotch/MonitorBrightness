@@ -11,7 +11,7 @@ namespace MonitorBrightness
         {
             if (args.Length == 0) return;
 
-            using var controller = new PhisicalMonitorBrightnessController();
+            using var controller = new PhysicalMonitorBrightnessController();
 
             //Console.WriteLine(controller.Monitors.Count);
 
@@ -34,7 +34,7 @@ namespace MonitorBrightness
     }
 
     // https://stackoverflow.com/questions/4013622/adjust-screen-brightness-using-c-sharp
-    public class PhisicalMonitorBrightnessController : IDisposable
+    public class PhysicalMonitorBrightnessController : IDisposable
     {
         #region DllImport
         [DllImport("dxva2.dll", EntryPoint = "GetNumberOfPhysicalMonitorsFromHMONITOR")]
@@ -85,7 +85,7 @@ namespace MonitorBrightness
 
         public IReadOnlyCollection<MonitorInfo> Monitors { get; set; }
 
-        public PhisicalMonitorBrightnessController()
+        public PhysicalMonitorBrightnessController()
         {
             UpdateMonitors();
         }
